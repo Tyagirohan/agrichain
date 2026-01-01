@@ -1,0 +1,39 @@
+[
+  {
+    "order_id": "ORD-2025-96149",
+    "consumer_email": "farmer@agrichain2.com",
+    "consumer_name": "Mukesh",
+    "consumer_role": "farmer",
+    "items": [
+      {
+        "product_id": "1",
+        "product_name": "Premium Basmati Rice",
+        "quantity": 1.0,
+        "unit": "kg",
+        "price_per_unit": 85.0,
+        "image_url": null,
+        "farmer_email": "+91 98765 43210",
+        "farm_location": "Punjab"
+      },
+      {
+        "product_id": "5",
+        "product_name": "Organic Turmeric Powder",
+        "quantity": 1.0,
+        "unit": "kg",
+        "price_per_unit": 180.0,
+        "image_url": null,
+        "farmer_email": "+91 98765 43214",
+        "farm_location": "Andhra Pradesh"
+      }
+    ],
+    "total_amount": 265.0,
+    "shipping_address": "123, abc",
+    "payment_method": "COD",
+    "order_date": "2026-01-01T12:05:47.162697",
+    "status": "Pending",
+    "tracking_id": null,
+    "rating": null,
+    "review": null,
+    "farmer_email": "+91 98765 43210"
+  }
+]

@@ -1,0 +1,144 @@
+{
+  "timestamp": "2026-01-01T12:03:07.760631",
+  "schemes": [
+    {
+      "id": "1",
+      "name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "category": "Financial Support",
+      "description": "Direct income support to all landholding farmers' families. Rs.6,000 per year in three equal installments of Rs.2,000 each.",
+      "eligibility": [
+        "Small and marginal farmers",
+        "Landholding farmers",
+        "All cultivable landholders"
+      ],
+      "benefits": "Rs.6,000 per year (Rs.2,000 per installment)",
+      "deadline": "Ongoing - Register anytime",
+      "status": "active",
+      "link": "https://pmkisan.gov.in",
+      "organization": "Ministry of Agriculture",
+      "minLandSize": 0,
+      "maxIncome": 200000
+    },
+    {
+      "id": "2",
+      "name": "PMFBY (Pradhan Mantri Fasal Bima Yojana)",
+      "category": "Insurance",
+      "description": "Crop insurance scheme providing financial support in case of crop failure due to natural calamities, pests & diseases.",
+      "eligibility": [
+        "All farmers growing notified crops",
+        "Sharecroppers and tenant farmers",
+        "Land owners can also enroll"
+      ],
+      "benefits": "Up to 90% premium subsidy on insurance",
+      "deadline": "Before Kharif season - June 2027",
+      "status": "active",
+      "link": "https://pmfby.gov.in",
+      "organization": "Ministry of Agriculture",
+      "minLandSize": 0
+    },
+    {
+      "id": "3",
+      "name": "Soil Health Card Scheme",
+      "category": "Agricultural Services",
+      "description": "Free soil testing and nutrient-based recommendations to improve soil health and productivity.",
+      "eligibility": [
+        "All farmers",
+        "No land size restriction",
+        "Available across all states"
+      ],
+      "benefits": "Free soil testing + personalized fertilizer recommendations",
+      "deadline": "Ongoing",
+      "status": "active",
+      "link": "https://soilhealth.dac.gov.in",
+      "organization": "Department of Agriculture",
+      "minLandSize": 0
+    },
+    {
+      "id": "4",
+      "name": "Kisan Credit Card (KCC)",
+      "category": "Credit/Loans",
+      "description": "Easy access to credit for farmers at subsidized interest rates for agricultural and allied activities.",
+      "eligibility": [
+        "All farmers (owner/tenant)",
+        "Sharecroppers",
+        "Self-help groups"
+      ],
+      "benefits": "Interest subvention up to 2%, credit limit up to Rs.3 lakh",
+      "deadline": "Ongoing",
+      "status": "active",
+      "link": "https://www.india.gov.in/spotlight/kisan-credit-card-scheme",
+      "organization": "NABARD",
+      "minLandSize": 0.1
+    },
+    {
+      "id": "5",
+      "name": "PKVY (Paramparagat Krishi Vikas Yojana)",
+      "category": "Organic Farming",
+      "description": "Promotion of organic farming through cluster approach and PGS certification.",
+      "eligibility": [
+        "Farmers interested in organic farming",
+        "Must form groups of 50 or more",
+        "All crops eligible"
+      ],
+      "benefits": "Rs.50,000 per hectare for 3 years + certification support",
+      "deadline": "Application open - March 2027",
+      "status": "active",
+      "link": "https://pgsindia-ncof.gov.in",
+      "organization": "Ministry of Agriculture",
+      "minLandSize": 1
+    },
+    {
+      "id": "6",
+      "name": "National Agriculture Market (e-NAM)",
+      "category": "Marketing",
+      "description": "Pan-India electronic trading portal for agricultural commodities ensuring transparent price discovery.",
+      "eligibility": [
+        "All registered farmers",
+        "Must have valid ID proof",
+        "Bank account required"
+      ],
+      "benefits": "Direct market access + transparent pricing + online payment",
+      "deadline": "Ongoing - Register anytime",
+      "status": "active",
+      "link": "https://www.enam.gov.in",
+      "organization": "Small Farmers Agribusiness Consortium",
+      "minLandSize": 0
+    },
+    {
+      "id": "7",
+      "name": "PM Kusum (Solar Pump Subsidy)",
+      "category": "Energy/Infrastructure",
+      "description": "Financial support for installation of solar pumps and solarization of grid-connected agriculture pumps.",
+      "eligibility": [
+        "All farmers",
+        "Farmer groups",
+        "Cooperatives"
+      ],
+      "benefits": "Up to 60% subsidy on solar pump installation",
+      "deadline": "Phase 2 - Applications till May 2027",
+      "status": "active",
+      "link": "https://www.india.gov.in/spotlight/pm-kusum",
+      "organization": "Ministry of New and Renewable Energy",
+      "minLandSize": 0.5,
+      "maxIncome": 300000
+    },
+    {
+      "id": "8",
+      "name": "Micro Irrigation Fund",
+      "category": "Water Conservation",
+      "description": "Support for installing drip and sprinkler irrigation systems under PMKSY.",
+      "eligibility": [
+        "All farmers",
+        "Farmer producer organizations",
+        "State governments can apply"
+      ],
+      "benefits": "50-90% subsidy based on farmer category",
+      "deadline": "Ongoing",
+      "status": "active",
+      "link": "https://pmksy.gov.in",
+      "organization": "NABARD",
+      "minLandSize": 0.2
+    }
+  ],
+  "count": 8
+}

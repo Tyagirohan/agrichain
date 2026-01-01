@@ -1,0 +1,93 @@
+[
+  {
+    "id": "farmer_1",
+    "email": "farmer@agrichain.com",
+    "password_hash": "26c07fc7be1668f8ea7e3801d4ffdbf33de487a593a69028936ec49f2c89f6ab",
+    "role": "farmer",
+    "name": "Rajan Singh",
+    "phone": "+91 9876543210",
+    "location": "Village Farm, Punjab",
+    "created_at": "2025-12-31T20:01:37.932073",
+    "profile": {
+      "farm_size": "5 hectares",
+      "crops": [
+        "Rice",
+        "Wheat",
+        "Tomatoes"
+      ],
+      "experience_years": 15,
+      "organic_certified": true
+    }
+  },
+  {
+    "id": "consumer_1",
+    "email": "consumer@agrichain.com",
+    "password_hash": "4c40c66a1be8c03ff6c5f2455bb5d99d4447c80a905a729b519da4b3483ef006",
+    "role": "consumer",
+    "name": "Priya Sharma",
+    "phone": "+91 9876543211",
+    "location": "New Delhi",
+    "created_at": "2025-12-31T20:01:37.932088",
+    "profile": {
+      "delivery_address": "123 Green Street, New Delhi, 110001",
+      "preferred_categories": [
+        "Organic",
+        "Vegetables"
+      ],
+      "member_since": "2025"
+    }
+  },
+  {
+    "id": "farmer_2",
+    "email": "ramesh@agrichain.com",
+    "password_hash": "68659bd23959c5ce088f70cff26a74c3b7baddbf592134ed5baff3a0e7001ecd",
+    "role": "farmer",
+    "name": "Ramesh Kumar",
+    "phone": "+91 9876543212",
+    "location": "Green Valley Farm, Maharashtra",
+    "created_at": "2025-12-31T20:01:37.932091",
+    "profile": {
+      "farm_size": "3 hectares",
+      "crops": [
+        "Potatoes",
+        "Onions",
+        "Cabbage"
+      ],
+      "experience_years": 10,
+      "organic_certified": false
+    }
+  },
+  {
+    "id": "consumer_2",
+    "email": "rohan.ai.try@gmail.com",
+    "password_hash": "982ccaece9b443e98e6369d62f170390019e057e126e2d04088bd8bb4f2ec0ac",
+    "role": "consumer",
+    "name": "Rohan ",
+    "phone": "7533804015",
+    "location": "Atrara, Meerut",
+    "created_at": "2025-12-31T20:11:25.543638",
+    "profile": {}
+  },
+  {
+    "id": "consumer_3",
+    "email": "farmer@agrichain1.com",
+    "password_hash": "33e59b5b356eee23637294b810ae53734f56b963728361c605602d3e12631298",
+    "role": "consumer",
+    "name": "Mukesh",
+    "phone": "7890678901",
+    "location": "meerut",
+    "created_at": "2025-12-31T20:39:31.150723",
+    "profile": {}
+  },
+  {
+    "id": "farmer_3",
+    "email": "farmer@agrichain2.com",
+    "password_hash": "891b5adaeb1a86639701c3ea40b9380061e2cf764d174a900c3fb8b0c46b1d57",
+    "role": "farmer",
+    "name": "Mukesh",
+    "phone": "1234567890",
+    "location": "Meerut",
+    "created_at": "2025-12-31T20:40:14.882853",
+    "profile": {}
+  }
+]

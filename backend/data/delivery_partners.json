@@ -1,0 +1,52 @@
+[
+  {
+    "partner_id": "DP001",
+    "name": "Raj Kumar",
+    "phone": "+91-9876543210",
+    "vehicle": "Bike",
+    "rating": 4.8,
+    "total_deliveries": 245,
+    "status": "available",
+    "current_location": "Connaught Place, Delhi"
+  },
+  {
+    "partner_id": "DP002",
+    "name": "Amit Singh",
+    "phone": "+91-9876543211",
+    "vehicle": "Van",
+    "rating": 4.6,
+    "total_deliveries": 189,
+    "status": "available",
+    "current_location": "Karol Bagh, Delhi"
+  },
+  {
+    "partner_id": "DP003",
+    "name": "Priya Sharma",
+    "phone": "+91-9876543212",
+    "vehicle": "Bike",
+    "rating": 4.9,
+    "total_deliveries": 312,
+    "status": "available",
+    "current_location": "Dwarka, Delhi"
+  },
+  {
+    "partner_id": "DP004",
+    "name": "Rahul Verma",
+    "phone": "+91-9876543213",
+    "vehicle": "Truck",
+    "rating": 4.7,
+    "total_deliveries": 156,
+    "status": "available",
+    "current_location": "Rohini, Delhi"
+  },
+  {
+    "partner_id": "DP005",
+    "name": "Sunita Devi",
+    "phone": "+91-9876543214",
+    "vehicle": "Bike",
+    "rating": 4.5,
+    "total_deliveries": 98,
+    "status": "available",
+    "current_location": "Saket, Delhi"
+  }
+]
