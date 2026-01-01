@@ -1,9 +1,9 @@
 # AgriChain Backend - Complete Dependencies
 
-# Core Framework
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-python-multipart==0.0.6
+# Core Framework (Updated for Python 3.13)
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.20
 
 # Authentication & Security
 pyjwt==2.8.0
@@ -26,15 +26,15 @@ apscheduler==3.10.4
 websockets==12.0
 python-socketio==5.10.0
 
-# Image Processing (Optional - for crop detection)
+# Image Processing (Made optional/lighter)
 pillow>=10.0.0
-numpy<2.0.0
-opencv-python-headless==4.8.1.78
+# Note: numpy and opencv removed to reduce build time and compatibility issues
+# They're not critical for core marketplace/chat/payment features
 
 # Utilities
 python-dotenv==1.0.0
 aiofiles==23.2.1
 
-# Data Validation
-pydantic==2.5.0
+# Data Validation (Updated for Python 3.13 compatibility)
+pydantic>=2.10.0
 email-validator==2.1.0
