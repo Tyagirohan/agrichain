@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { Upload, Camera, AlertCircle, CheckCircle, Loader, Download, Share2, X, Mail, MessageCircle as WhatsApp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import jsPDF from 'jspdf';
+import { getApiEndpoint, API_BASE_URL } from '../config/api';
 
 interface DetectionResult {
   disease: string;
@@ -232,7 +233,7 @@ export const CropDiseaseDetection = () => {
       formData.append('file', file);
       
       // Call the backend API
-      const response = await fetch('http://localhost:8000/predict', {
+      const response = await fetch(getApiEndpoint('/predict'), {
         method: 'POST',
         body: formData,
       });
@@ -252,7 +253,7 @@ export const CropDiseaseDetection = () => {
       });
     } catch (error) {
       console.error('Error analyzing image:', error);
-      alert('Failed to analyze image. Make sure the backend server is running on http://localhost:8000');
+      alert(`Failed to analyze image. Make sure the backend server is running at ${API_BASE_URL}`);
       
       // Fallback to mock data if backend is not available
       const randomResult = mockDiseases[Math.floor(Math.random() * mockDiseases.length)];

@@ -2,6 +2,7 @@
  * Razorpay Payment Gateway Configuration & Utilities
  * Handles payment order creation, verification, and processing
  */
+import { getApiEndpoint } from '../config/api';
 
 // Razorpay Key (Test mode - replace with your actual key)
 export const RAZORPAY_KEY_ID = 'rzp_test_demo'; // Replace with your Razorpay key
@@ -53,7 +54,7 @@ export const createPaymentOrder = async (
       return null;
     }
 
-    const response = await fetch('http://localhost:8000/payments/create-order', {
+    const response = await fetch(getApiEndpoint('/payments/create-order'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -99,7 +100,7 @@ export const verifyPayment = async (
       return false;
     }
 
-    const response = await fetch('http://localhost:8000/payments/verify', {
+    const response = await fetch(getApiEndpoint('/payments/verify'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -195,7 +196,7 @@ export const getPaymentHistory = async (): Promise<any[]> => {
       return [];
     }
 
-    const response = await fetch('http://localhost:8000/payments/history', {
+    const response = await fetch(getApiEndpoint('/payments/history'), {
       headers: {
         'Authorization': `Bearer ${token}`
       }

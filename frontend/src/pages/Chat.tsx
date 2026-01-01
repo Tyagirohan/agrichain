@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MessageCircle, Send, Search, X, Circle, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { getApiEndpoint, getWsEndpoint } from '../config/api';
 
 interface Message {
   message_id: string;
@@ -61,7 +62,7 @@ export const Chat = () => {
   }, [navigate]);
 
   const connectWebSocket = (userEmail: string) => {
-    const websocket = new WebSocket(`ws://localhost:8000/ws/chat/${userEmail}`);
+    const websocket = new WebSocket(getWsEndpoint(`/ws/chat/${userEmail}`));
 
     websocket.onopen = () => {
       console.log('[CHAT] WebSocket connected');
@@ -113,7 +114,7 @@ export const Chat = () => {
   const loadConversations = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8000/chat/conversations', {
+      const response = await fetch(getApiEndpoint('/chat/conversations'), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -137,7 +138,7 @@ export const Chat = () => {
   const loadChatHistory = async (otherUserEmail: string) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/chat/history/${otherUserEmail}`, {
+      const response = await fetch(getApiEndpoint(`/chat/history/${otherUserEmail}`), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -159,7 +160,7 @@ export const Chat = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8000/chat/send', {
+      const response = await fetch(getApiEndpoint('/chat/send'), {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -190,7 +191,7 @@ export const Chat = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/chat/conversation/${conversation.other_user.email}`, {
+      const response = await fetch(getApiEndpoint(`/chat/conversation/${conversation.other_user.email}`), {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

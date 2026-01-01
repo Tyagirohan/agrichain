@@ -4,6 +4,7 @@ import { ProductStore, type RegisteredProduct } from '../utils/productStore';
 import { WishlistManager } from '../utils/wishlistManager';
 import { processPayment } from '../utils/razorpayConfig';
 import { useTranslation } from 'react-i18next';
+import { getApiEndpoint } from '../config/api';
 
 interface Product {
   id: string;
@@ -154,7 +155,7 @@ export const Marketplace = () => {
       let reputation = undefined;
       if (p.farmerEmail) {
         try {
-          const response = await fetch(`http://localhost:8000/farmers/${p.farmerEmail}/reputation`);
+          const response = await fetch(getApiEndpoint(`/farmers/${p.farmerEmail}/reputation`));
           if (response.ok) {
             reputation = await response.json();
           }
@@ -609,7 +610,7 @@ export const Marketplace = () => {
       console.log('[Checkout] Sending order data:', orderData);
 
       // Send order to backend
-      const response = await fetch('http://localhost:8000/orders/create', {
+      const response = await fetch(getApiEndpoint('/orders/create'), {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

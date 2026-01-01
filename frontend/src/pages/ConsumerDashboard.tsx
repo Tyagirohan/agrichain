@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { getApiEndpoint } from '../config/api';
 import { 
   ShoppingBag, 
   Package, 
@@ -70,7 +71,7 @@ export const ConsumerDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        const response = await fetch('http://localhost:8000/orders/my-orders', {
+        const response = await fetch(getApiEndpoint('/orders/my-orders'), {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -96,7 +97,7 @@ export const ConsumerDashboard = () => {
       // Fetch analytics data
       const userData = JSON.parse(localStorage.getItem('user') || '{}');
       if (userData.email) {
-        const analyticsResponse = await fetch(`http://localhost:8000/analytics/consumer/${userData.email}`);
+        const analyticsResponse = await fetch(getApiEndpoint(`/analytics/consumer/${userData.email}`));
         if (analyticsResponse.ok) {
           const analyticsData = await analyticsResponse.json();
           setAnalytics(analyticsData);
@@ -121,7 +122,7 @@ export const ConsumerDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/orders/${selectedOrder.order_id}/rate`, {
+      const response = await fetch(getApiEndpoint(`/orders/${selectedOrder.order_id}/rate`), {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -152,7 +153,7 @@ export const ConsumerDashboard = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/auth/delete-account', {
+      const response = await fetch(getApiEndpoint('/auth/delete-account'), {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

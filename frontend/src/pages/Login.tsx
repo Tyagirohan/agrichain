@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { LogIn, UserPlus, Mail, Lock, User, Phone, MapPin, Sprout } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { getApiEndpoint } from '../config/api';
 
 export const Login = () => {
   const { t } = useTranslation();
@@ -31,7 +32,7 @@ export const Login = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/auth/login', {
+      const response = await fetch(getApiEndpoint('/auth/login'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(loginData)
@@ -78,7 +79,7 @@ export const Login = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/auth/register', {
+      const response = await fetch(getApiEndpoint('/auth/register'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

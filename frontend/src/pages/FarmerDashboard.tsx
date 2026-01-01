@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { getApiEndpoint } from '../config/api';
 import { 
   Package, 
   ShoppingBag, 
@@ -114,7 +115,7 @@ export const FarmerDashboard = () => {
       const token = localStorage.getItem('token');
       if (token) {
         // Fetch orders RECEIVED (as seller)
-        const receivedResponse = await fetch('http://localhost:8000/orders/received', {
+        const receivedResponse = await fetch(getApiEndpoint('/orders/received'), {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -133,7 +134,7 @@ export const FarmerDashboard = () => {
         }
 
         // Fetch orders PLACED (as buyer)
-        const purchasesResponse = await fetch('http://localhost:8000/orders/my-orders', {
+        const purchasesResponse = await fetch(getApiEndpoint('/orders/my-orders'), {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -157,7 +158,7 @@ export const FarmerDashboard = () => {
       }
 
       // Fetch analytics data
-      const analyticsResponse = await fetch(`http://localhost:8000/analytics/farmer/${userData.email}`);
+      const analyticsResponse = await fetch(getApiEndpoint(`/analytics/farmer/${userData.email}`));
       if (analyticsResponse.ok) {
         const analyticsData = await analyticsResponse.json();
         setAnalytics(analyticsData);
@@ -176,7 +177,7 @@ export const FarmerDashboard = () => {
   const updateOrderStatus = async (orderId: string, newStatus: string) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/orders/${orderId}/update-status?new_status=${newStatus}`, {
+      const response = await fetch(getApiEndpoint(`/orders/${orderId}/update-status?new_status=${newStatus}`), {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -215,7 +216,7 @@ export const FarmerDashboard = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/auth/delete-account', {
+      const response = await fetch(getApiEndpoint('/auth/delete-account'), {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

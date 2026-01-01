@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FileText, Search, ExternalLink, Bell, CheckCircle, Calendar, DollarSign, Users, X, Calculator } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { getApiEndpoint } from '../config/api';
 
 interface Scheme {
   id: string;
@@ -162,7 +163,7 @@ export const GovtSchemes = () => {
   const fetchSchemes = async () => {
     try {
       const currentLang = i18n.language; // 'en' or 'hi'
-      const response = await fetch(`http://localhost:8000/schemes?language=${currentLang}`);
+      const response = await fetch(getApiEndpoint(`/schemes?language=${currentLang}`));
       if (!response.ok) {
         throw new Error('Failed to fetch schemes');
       }

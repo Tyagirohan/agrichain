@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Bell, X, Check, CheckCheck, AlertCircle, Info, Calendar } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { getApiEndpoint } from '../config/api';
 
 interface Notification {
   id: string;
@@ -28,7 +29,7 @@ export const NotificationCenter = () => {
   const fetchNotifications = async (unreadOnly: boolean = false) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:8000/notifications?unread_only=${unreadOnly}&limit=50`);
+      const response = await fetch(getApiEndpoint(`/notifications?unread_only=${unreadOnly}&limit=50`));
       const data = await response.json();
       
       if (data.success) {
@@ -45,7 +46,7 @@ export const NotificationCenter = () => {
   // Fetch unread count
   const fetchUnreadCount = async () => {
     try {
-      const response = await fetch('http://localhost:8000/notifications/unread-count');
+      const response = await fetch(getApiEndpoint('/notifications/unread-count'));
       const data = await response.json();
       
       if (data.success) {
@@ -59,7 +60,7 @@ export const NotificationCenter = () => {
   // Mark notification as read
   const markAsRead = async (notificationId: string) => {
     try {
-      const response = await fetch(`http://localhost:8000/notifications/${notificationId}/read`, {
+      const response = await fetch(getApiEndpoint(`/notifications/${notificationId}/read`), {
         method: 'POST',
       });
       const data = await response.json();
@@ -79,7 +80,7 @@ export const NotificationCenter = () => {
   // Mark all as read
   const markAllAsRead = async () => {
     try {
-      const response = await fetch('http://localhost:8000/notifications/read-all', {
+      const response = await fetch(getApiEndpoint('/notifications/read-all'), {
         method: 'POST',
       });
       const data = await response.json();

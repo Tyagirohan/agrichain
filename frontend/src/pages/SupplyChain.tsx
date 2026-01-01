@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Package, MapPin, Calendar, User, CheckCircle, Truck, Store, Home, X, Plus, Clock } from 'lucide-react';
 import { ProductStore } from '../utils/productStore';
 import type { RegisteredProduct } from '../utils/productStore';
+import { getApiEndpoint } from '../config/api';
 
 interface SupplyChainStage {
   id: string;
@@ -175,7 +176,7 @@ export const SupplyChain = () => {
       const token = localStorage.getItem('token');
       if (!token) return null;
 
-      const response = await fetch('http://localhost:8000/orders/my-orders', {
+      const response = await fetch(getApiEndpoint('/orders/my-orders'), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
