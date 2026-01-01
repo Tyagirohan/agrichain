@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MessageCircle, Send, Search, X, Circle, Trash2 } from 'lucide-react';
+import { MessageCircle, Send, Search, Circle, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { getApiEndpoint, getWsEndpoint } from '../config/api';
 

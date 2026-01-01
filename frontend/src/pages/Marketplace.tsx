@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ShoppingCart, Search, Filter, TrendingUp, Star, MapPin, Phone, MessageCircle, X, Plus, Check, Package, Upload, Heart } from 'lucide-react';
+import { ShoppingCart, Search, Filter, TrendingUp, Star, MapPin, Phone, MessageCircle, X, Plus, Check, Package, Heart } from 'lucide-react';
 import { ProductStore, type RegisteredProduct } from '../utils/productStore';
 import { WishlistManager } from '../utils/wishlistManager';
 import { processPayment } from '../utils/razorpayConfig';
@@ -1056,9 +1056,9 @@ export const Marketplace = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                     <span className="font-medium">{product.farmer}</span>
-                    {product.farmerReputation && (
+                    {product.farmerReputation && product.farmerReputation.badge && (
                       <span className="ml-2 text-xs text-green-600 font-semibold">
-                        ({product.farmerReputation.completed_orders} orders completed)
+                        {product.farmerReputation.badge}
                       </span>
                     )}
                   </div>

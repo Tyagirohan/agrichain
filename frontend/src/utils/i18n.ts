@@ -246,7 +246,6 @@ const resources = {
       startConversation: 'Start a conversation',
       chatWithFarmersConsumers: 'Direct communication with farmers and consumers',
       selectConversation: 'Select a conversation to start chatting',
-      justNow: 'just now',
       messageFailed: 'Failed to send message',
       
       // PWA
@@ -631,7 +630,6 @@ const resources = {
       startConversation: 'बातचीत शुरू करें',
       chatWithFarmersConsumers: 'किसानों और उपभोक्ताओं के साथ सीधा संवाद',
       selectConversation: 'चैट शुरू करने के लिए एक बातचीत चुनें',
-      justNow: 'अभी',
       messageFailed: 'संदेश भेजने में विफल',
       
       // PWA (ऐप इंस्टॉल)

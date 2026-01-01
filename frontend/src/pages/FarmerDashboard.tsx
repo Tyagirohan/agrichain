@@ -8,14 +8,11 @@ import {
   DollarSign, 
   TrendingUp, 
   Eye, 
-  Edit, 
   Trash2,
-  CheckCircle,
   Clock,
   Truck,
   MapPin,
-  ShoppingCart,  // Added for My Purchases
-  BarChart3  // Added for Analytics
+  ShoppingCart
 } from 'lucide-react';
 import { ProductStore } from '../utils/productStore';
 import { FarmerAnalytics } from '../components/Analytics';
@@ -551,7 +548,7 @@ export const FarmerDashboard = () => {
                         {t('order')} #{purchase.order_id.slice(0, 8)}
                       </h3>
                       <p className="text-sm text-gray-600">
-                        Seller: {purchase.items?.[0]?.farmer_email || 'Farmer'}
+                        Seller: {(purchase as any).farmer_email || purchase.items?.[0]?.product_name || 'Farmer'}
                       </p>
                       <p className="text-xs text-gray-500">
                         {new Date(purchase.order_date).toLocaleDateString()}

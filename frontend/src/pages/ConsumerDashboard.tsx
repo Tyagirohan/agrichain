@@ -14,8 +14,7 @@ import {
   CheckCircle,
   Truck,
   RefreshCw,
-  Trash2,
-  BarChart3  // Added for Analytics
+  Trash2
 } from 'lucide-react';
 import { ConsumerAnalytics } from '../components/Analytics';
 

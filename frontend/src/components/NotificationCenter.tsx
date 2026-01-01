@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Bell, X, Check, CheckCheck, AlertCircle, Info, Calendar } from 'lucide-react';
+import { Bell, X, CheckCheck, AlertCircle, Info, Calendar } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { getApiEndpoint } from '../config/api';
 

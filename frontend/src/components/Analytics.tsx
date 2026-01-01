@@ -50,7 +50,7 @@ export const FarmerAnalytics = ({ data }: FarmerAnalyticsProps) => {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
-            <Tooltip formatter={(value: number) => `₹${value.toFixed(2)}`} />
+            <Tooltip formatter={(value: number | undefined) => value !== undefined ? `₹${value.toFixed(2)}` : '₹0.00'} />
             <Area type="monotone" dataKey="revenue" stroke="#10b981" fillOpacity={1} fill="url(#colorRevenue)" />
           </AreaChart>
         </ResponsiveContainer>
@@ -65,7 +65,7 @@ export const FarmerAnalytics = ({ data }: FarmerAnalyticsProps) => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="product" angle={-45} textAnchor="end" height={100} />
               <YAxis />
-              <Tooltip formatter={(value: number) => `₹${value.toFixed(2)}`} />
+              <Tooltip formatter={(value: number | undefined) => value !== undefined ? `₹${value.toFixed(2)}` : '₹0.00'} />
               <Bar dataKey="revenue" fill="#3b82f6" />
             </BarChart>
           </ResponsiveContainer>
@@ -155,7 +155,7 @@ export const ConsumerAnalytics = ({ data }: ConsumerAnalyticsProps) => {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
-            <Tooltip formatter={(value: number) => `₹${value.toFixed(2)}`} />
+            <Tooltip formatter={(value: number | undefined) => value !== undefined ? `₹${value.toFixed(2)}` : '₹0.00'} />
             <Legend />
             <Line type="monotone" dataKey="spending" stroke="#3b82f6" strokeWidth={3} dot={{ r: 6 }} />
           </LineChart>
@@ -174,16 +174,16 @@ export const ConsumerAnalytics = ({ data }: ConsumerAnalyticsProps) => {
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                label={({ category, spending }) => `${category}: ₹${spending.toFixed(0)}`}
+                label={(props: any) => `${props.category}: ₹${props.spending.toFixed(0)}`}
                 outerRadius={80}
                 fill="#8884d8"
                 dataKey="spending"
               >
-                {data.category_spending.map((entry, index) => (
+                {data.category_spending.map((_entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip formatter={(value: number) => `₹${value.toFixed(2)}`} />
+              <Tooltip formatter={(value: number | undefined) => value !== undefined ? `₹${value.toFixed(2)}` : '₹0.00'} />
             </PieChart>
           </ResponsiveContainer>
         </div>
