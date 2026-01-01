@@ -16,7 +16,7 @@ razorpay==1.4.1
 # Web Scraping & HTTP
 beautifulsoup4==4.12.2
 requests==2.31.0
-lxml==4.9.3
+lxml>=5.0.0  # Updated for Python 3.13 compatibility
 deep-translator==1.11.4
 
 # Scheduling & Background Tasks
