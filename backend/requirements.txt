@@ -1,10 +1,40 @@
-# AgriChain Backend - Lightweight version
+# AgriChain Backend - Complete Dependencies
 
+# Core Framework
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 python-multipart==0.0.6
+
+# Authentication & Security
+pyjwt==2.8.0
+passlib==1.7.4
+bcrypt==4.1.2
+
+# Payment Gateway
+razorpay==1.4.1
+
+# Web Scraping & HTTP
+beautifulsoup4==4.12.2
+requests==2.31.0
+lxml==4.9.3
+deep-translator==1.11.4
+
+# Scheduling & Background Tasks
+apscheduler==3.10.4
+
+# WebSocket Support
+websockets==12.0
+python-socketio==5.10.0
+
+# Image Processing (Optional - for crop detection)
 pillow>=10.0.0
 numpy<2.0.0
 opencv-python-headless==4.8.1.78
+
+# Utilities
 python-dotenv==1.0.0
 aiofiles==23.2.1
+
+# Data Validation
+pydantic==2.5.0
+email-validator==2.1.0
